@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# caesar_cipher.py
-
 def caesar_encrypt(text, shift):
     """
     Shift each letter in `text` forward by `shift` positions.
@@ -10,12 +7,12 @@ def caesar_encrypt(text, shift):
     output = ""
     for ch in text:
         code = ord(ch)
-        if 65 <= code <= 90:        # uppercase A–Z
+        if 65 <= code <= 90:    
             output += chr((code - 65 + shift) % 26 + 65)
-        elif 97 <= code <= 122:     # lowercase a–z
+        elif 97 <= code <= 122:    
             output += chr((code - 97 + shift) % 26 + 97)
         else:
-            output += ch            # other characters unchanged
+            output += ch          
     return output
 
 def caesar_decrypt(text, shift):
@@ -25,7 +22,7 @@ def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
 
 def main():
-    # let the user choose to encrypt or decrypt
+    
     mode = input("Type 'e' to encrypt or 'd' to decrypt: ").strip().lower()
     text = input("Enter your text: ")
     try:
